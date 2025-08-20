@@ -1,0 +1,36 @@
+
+user@CEPBEPOKK MINGW64 ~/OneDrive/__AIPYTHON52/ALL_TASKS
+$ cd  ~/OneDrive/__AIPYTHON52/ALL_TASKS/08_2025/200825_cw
+
+user@CEPBEPOKK MINGW64 ~/OneDrive/__AIPYTHON52/ALL_TASKS/08_2025/200825_cw (main)
+$  gh auth login
+? Where do you use GitHub? GitHub.com
+? What is your preferred protocol for Git operations on this host? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Paste an authentication token
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+The minimum required scopes are 'repo', 'read:org', 'workflow'.
+? Paste your authentication token: ****************************************
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as potervi94
+! You were already logged in to this account
+
+user@CEPBEPOKK MINGW64 ~/OneDrive/__AIPYTHON52/ALL_TASKS/08_2025/200825_cw (main)
+$ gh repo create 200825_cw --public --source=. --remote=origin --push
+✓ Created repository potervi94/200825_cw on github.com
+  https://github.com/potervi94/200825_cw
+✓ Added remote https://github.com/potervi94/200825_cw.git
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 501 bytes | 83.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/potervi94/200825_cw.git
+ * [new branch]      HEAD -> main
+branch 'main' set up to track 'origin/main'.
+✓ Pushed commits to https://github.com/potervi94/200825_cw.git
+
+user@CEPBEPOKK MINGW64 ~/OneDrive/__AIPYTHON52/ALL_TASKS/08_2025/200825_cw (main)
