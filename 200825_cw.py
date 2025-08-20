@@ -6,6 +6,8 @@
 # Створіть клас Student з атрибутами name та age. Додайте
 # метод для виводу інформації у форматі «Ім’я: {name}, вік:
 # {age}»
+import math
+import random
 
 
 class Student:
@@ -17,11 +19,72 @@ class Student:
     def show(self):
         return f"Ім’я: {self.name}, вік:  {self.age}"
 
+#
+# # Завдання 2
+# # Створіть список з 3-ма студентами, дані вводить
+# # користувач. Після чого для кожного студента виведіть
+# # інформацію про нього за допомогою метода.
+#
+# students :list[Student]= []
+# students.append(Student())
+# students.append(Student())
+# students.append(Student())
+#
+# for index,stud in enumerate(students):
+#     stud.name = input("Name? ")
+#     stud.age = input("Age? ")
+#
+#     print(students[index].show())
 
-# Завдання 2
-# Створіть список з 3-ма студентами, дані вводить
-# користувач. Після чого для кожного студента виведіть
-# інформацію про нього за допомогою метода.
+
+# Завдання 3
+# Створіть клас Circle з атрибутом radius. Додайте метод для
+# отримання площі кола
+class Circle:
+    def __init__(self, radius):
+        self.radius: float = radius
+
+    def calculate_square(self):
+        return math.pi * (self.radius ** 2)
+
+
+с1=Circle(radius=4.4)
+print(с1.calculate_square())
+
+
+
+# Завдання 4
+# Створіть клас BankAccount з атрибутами owner та balance.
+# Додайте метод deposit для поповнення рахунку
+# Додайте метод withdraw для зняття грошей з рахунку
+# Додайте метод info для виведення інформації про баланс
+class BankAccount:
+    """
+    Represents a bank account with an owner and related functionality.
+
+    The BankAccount class encapsulates the details of a bank account including
+    its owner and any associated operations such as deposits, withdrawals, and
+    balance inquiries.
+
+    :type owner: Student
+    :type balance: float
+    """
+    def __init__(self, owner:Student=Student(), balance=0.0 ):
+        self.owner : Student = owner
+        self.balance : float = balance
+
+    # метод deposit для поповнення рахунку
+    def deposit(self, deposit_suma:float=0.0):
+        self.balance += deposit_suma
+
+    # метод withdraw для зняття грошей з рахунку
+    def withdraw(self, withdraw_suma:float=0.0):
+        self.balance -= withdraw_suma
+
+    # метод info для виведення інформації про баланс
+    def info(self):
+        return f"Власник{self.owner.name}({self.owner.age}) Баланс:{self.balance}"
+
 
 students :list[Student]= []
 students.append(Student())
@@ -34,19 +97,17 @@ for index,stud in enumerate(students):
 
     print(students[index].show())
 
+    b1=BankAccount(students[index], 0.0)
+    amount = round(random.uniform(10.0, 1000.0), 2)
+    amount2 = round(random.uniform(10.0, 1000.0), 2)
 
-# Завдання 3
-# Створіть клас Circle з атрибутом radius. Додайте метод для
-# отримання площі кола
-class Circle:
-    pass
+    print(b1.info())
+    b1.deposit(amount)
+    print(b1.info())
+    b1.withdraw(amount2)
+    print(b1.info())
 
 
-# Завдання 4
-# Створіть клас BankAccount з атрибутами owner та balance.
-# Додайте метод deposit для поповнення рахунку
-# Додайте метод withdraw для зняття грошей з рахунку
-# Додайте метод info для виведення інформації про баланс
 # Завдання 5
 # Створіть клас Car з атрибутами brand(марка), year(рік
 # випуску), is_ready(чи готовий до поїздки, за замовчування
